@@ -205,6 +205,7 @@ public abstract class Animal {
 ```
 
 #### Interface
+* They are Adjectives - e.g. Confident -> abst_methods (set of action that object(noun) may perform like smile(), perform() }
 
 An Interface in Java programming language is defined as an abstract type used to specify the behavior of a class. An interface in Java is a blueprint of a class. A Java interface contains static constants and abstract methods. The interface in Java is a mechanism to achieve abstraction.
 
