@@ -38,7 +38,7 @@
     />
 </p>
 
-The Single Responsibility Principle states that a class should do one thing, and therefore it should have only a single reason to change. Only one potential change (database logic, logging logic, and so on.) in the software’s specification should be able to affect the specification of the class.
+The Single Responsibility Principle states that a **class should do one thing**, and therefore it should have only a single reason to change. Only one potential change (database logic, logging logic, and so on.) in the software’s specification should be able to affect the specification of the class.
 
 This means that if a class is a data container, like a Book class or a Student class, and it has some fields regarding that entity, it should change only when we change the data model.
 
@@ -184,7 +184,7 @@ An abstract class is nothing but a class that is declared using the abstract key
 
 Abstract classes have no restrictions on field and method modifiers, while in an interface, all are public by default. We can have instance and static initialization blocks in an abstract class, whereas we can never have them in the interface. Abstract classes may also have constructors which will get executed during the child object's instantiation.
 
-Abstract classes can be defined using the `abstract` keyword. An abstract class can have abstract methods and non-abstract methods. An abstract method is a method that is declared without an implementation. It is a method that is declared using the `abstract` keyword and does not have a body. An abstract class can have a constructor and it gets executed when an object of the child class is created. An abstract class can have instance variables, static variables, instance methods, static methods, and abstract methods.
+Abstract classes can be defined using the `abstract` keyword. An abstract class can have abstract methods and non-abstract methods. An abstract method is a method that is declared without an implementation. It is a method that is declared using the `abstract` keyword and does not have a body. An abstract class can have a constructor and it gets executed when an object of the child class is created, i.e. **to say abstract class can't be instantiated using new keyword**. An abstract class can have instance variables, static variables, instance methods, static methods, and abstract methods.
 
 ```java
 public abstract class Animal {
@@ -219,12 +219,12 @@ public interface Animal {
 
 ### When to use abstract classes and interfaces?
 * If multiple classes have common functionalities, we would like to use inheritance to avoid code duplication and also have fixed contracts so that the subclasses are forced to implement the common functionalities.
-* If the common classes have common attributes, consider using abstract classes since they can have instance variables.
-* If the common classes have common methods, consider using interfaces since they can have only abstract methods. However, the implementation of the methods can be different in the subclasses. Interfaces are also useful when we want to have multiple inheritance.
+* If the **common classes have common attributes**, consider using **abstract classes** since they can have instance variables.
+* If the **common classes have common methods**, consider using **interfaces** since they can have only abstract methods. However, the implementation of the methods can be different in the subclasses. Interfaces are also useful when we want to have multiple inheritance.
 
 ### Fixing OCP violation in the `Bird` class
 
-Now that we have learnt about abstract classes and interfaces, let us fix the SRP and OCP violation in the `Bird` class. In order to fix the SRP violations, we would consider having a parent class `Bird` and child classes `Eagle`, `Penguin`, and `Parrot`. Since, different birds have the same attributes and behaviours, we would want to use classes. An instance of the `Bird` class does not make sense, hence we would use an abstract class. We can't use an interface since we would want to have instance variables. We would also want to have a fixed contract for the subclasses to implement the common functionalities. Hence, we would use an abstract class.
+Now that we have learnt about abstract classes and interfaces, let us fix the SRP and OCP violation in the `Bird` class. In order to **fix the SRP violations**, we would consider **having a parent class `Bird` and child classes** `Eagle`, `Penguin`, and `Parrot`. Since, different birds have the same attributes and behaviours, we would want to use classes. An instance of the `Bird` class does not make sense, hence we would **use an abstract class**. We can't use an interface since we would want to have instance variables. We would also **want to have a fixed contract for the subclasses** to implement the common functionalities hence open for extension but closed for any modification with the legacy bird code **(i.e. OCP violation fixed)**. Hence, we would use an abstract class.
 Now, our `Bird` class would look like this.
 
 ```mermaid
