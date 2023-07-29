@@ -414,7 +414,9 @@ Now this gives `Eagle` or `Parrot` class an **option** to change its method conf
 // In Main file
 public class Main{
     public static void main(String[] args){
-        Flyable eagle = new Eagle( new GlidingBehaviour() or new FlappingBehaviour() );
+        Flyable eagle = new Eagle( new GlidingBehaviour() );
+        Flyable eagle = new Eagle( new FlappingBehaviour() );
+        Flyable parrot = new Parrot( new GlidingBehaviour() ); // and so on...
     }
 }
 ```
